@@ -1,0 +1,68 @@
+// Using do while loop to re-run program after it completes
+            do
+            {
+                // Asking for user input
+                Console.WriteLine("What is your Height (in inches)?");
+                // Taking user input as string. If user inputs "exit" prgram will end
+                string str = Console.ReadLine();
+                if(str == "exit")
+                {
+                    break;
+              
+                }
+                // Converting the sring into a int
+                int h = Convert.ToInt32(str);
+
+                /*
+                still learning try - catch 
+                try
+
+                     int h = Convert.ToInt32(Console.ReadLine());
+                 }
+                 catch
+                 {
+                     Console.WriteLine("Thats not a number");
+                 }*/
+
+                Console.WriteLine("What is your Weight (in Pounds)?");
+                //Convert user input into w for weight
+                int w = Convert.ToInt32(Console.ReadLine());
+
+                /*try
+                {
+                   int w = Convert.ToInt32(Console.ReadLine());
+
+                }
+                catch
+                {
+                    Console.WriteLine("Thats not a number");
+
+                }
+                */
+                // Calculaing BMI
+                int BMI = (w * 703) / (h * h);
+                // Nesting if-else statements to print two lines of code together. Using "write" so next sentence will be on same line. 
+                if (BMI < 18.50) Console.Write("You are Underweight. Your BMI is {0} Kg. ", BMI);
+                {
+                    // Using "and" to compare booleans
+                    if (BMI < 16.00) Console.WriteLine("Severe thinness.");
+                    else if (BMI >= 16.00 && BMI <= 16.99) Console.WriteLine("Moderate thinness.");
+                    else if (BMI >= 17.00 && BMI <= 18.49) Console.WriteLine("Mild thinness.");
+                }
+                if (BMI >= 18.50 && BMI <= 24.99) Console.WriteLine("Your BMI is {0} Kg. You are of Normal Weight", BMI);
+                if (BMI >= 25.00 && BMI < 30.00) Console.Write("Your BMI is {0} Kg. You are Overweight", BMI);
+                {
+                    if (BMI >= 25.00 && BMI <= 27.49) Console.WriteLine("Pre-Obese Class I");
+                    else if (BMI >= 27.50 && BMI <= 29.99) Console.WriteLine("Pre-Obese Class II");
+                }
+                if (BMI >= 30.00) Console.Write("You are Obese. Your BMI is {0} Kg. ", BMI);
+                {
+                    if (BMI >= 30.00 && BMI <= 34.99) Console.WriteLine("Obese Class I");
+                    else if (BMI >= 35.00 && BMI <= 39.99) Console.WriteLine("Obese Class II");
+                    else if (BMI >= 40) Console.WriteLine("Obese Class III");
+                }
+                // finsih of do-while loop.
+            }
+            while (true);
+        }
+               
