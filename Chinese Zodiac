@@ -1,0 +1,35 @@
+do
+            {
+                Console.WriteLine("What year were you born?");
+                string str = Console.ReadLine();
+                if (str == "exit")
+                {
+                    break;
+                }
+                string[] zodiac = { "Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig" };
+                int year = Convert.ToInt32(str);
+                decimal num1 = Convert.ToDecimal(year % 12);
+                decimal num = (Math.Round(num1));
+              
+                //Tried to assign the first two digits after the decimal to determine num
+                    
+                if (num == 0)
+                {
+                    if (year % 12 == 0) Console.WriteLine("Your Chinese Zodiac is: {0}", zodiac[11]);
+                    else if (year % 11 == 0) Console.WriteLine("Your Chinese Zodiac is: {0}", zodiac[10]);
+                    else if (year % 10 == 0) Console.WriteLine("Your Chinese Zodiac is: {0}", zodiac[9]);
+                    else if (year % 9 == 0) Console.WriteLine("Your Chinese Zodiac is: {0}", zodiac[8]);
+                    else if (year % 8 == 0) Console.WriteLine("Your Chinese Zodiac is: {0}", zodiac[7]);
+                    else if (year % 7 == 0) Console.WriteLine("Your Chinese Zodiac is: {0}", zodiac[6]);
+                    else if (year % 6 == 0) Console.WriteLine("Your Chinese Zodiac is: {0}", zodiac[5]);
+                    else if (year % 5 == 0) Console.WriteLine("Your Chinese Zodiac is: {0}", zodiac[4]);
+                    else if (year % 4 == 0) Console.WriteLine("Your Chinese Zodiac is: {0}", zodiac[3]);
+                    else if (year % 3 == 0) Console.WriteLine("Your Chinese Zodiac is: {0}", zodiac[2]);
+                    else if (year % 2 == 0) Console.WriteLine("Your Chinese Zodiac is: {0}", zodiac[1]);
+                }
+                else
+                {
+                    Console.WriteLine("Your Chinese Zodiac is: {0}", zodiac[0]);
+                }
+            }
+            while (true);
