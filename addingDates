@@ -1,0 +1,72 @@
+static void Main(string[] args)
+        {
+            int day = 6;
+            int month = 2;
+            int year = 2020;
+            int addedDays = 30;
+            int daysInTotal = day + addedDays;
+            int dayE;
+            int nNum;
+
+            if (daysInTotal < calendar(month, year))
+                day = daysInTotal;
+            else
+
+                while (daysInTotal > calendar(month, day))
+                {
+                    daysInTotal -= calendar(month, year);
+                    month++;
+
+                    if (daysInTotal <= calendar(month, year))
+                        day = daysInTotal;
+                    if (month > 12)
+                    {
+                        month = 1;
+                        year++;
+                    }
+
+                }
+            while (addedDays > 7)
+            {
+                addedDays /= 7;
+            }
+            if( addedDays <= 7)
+            {
+                nNum = addedDays;
+                
+            }
+     
+            string[] title = new string [12] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec" };
+
+            string monthE = title[month];
+
+            string[] dayt = new string[8] {"blank", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday" };
+
+            int dayE = dayt[nNum];
+
+                Console.WriteLine("{0} {0} {1}, {2}",dayE, monthE, day, year);
+            }
+            static int calendar(int month, int year)
+            {
+                switch (month)
+                {
+                    case 1: return 31;
+                    case 2:
+                        if (year % 4 == 0)
+                        {
+                            return 29;
+                        }
+                        else return 28;
+                    case 3: return 31;
+                    case 4: return 30;
+                    case 5: return 31;
+                    case 6: return 30;
+                    case 7: return 31;
+                    case 8: return 31;
+                    case 9: return 30;
+                    case 10:
+                        return 31;
+                    case 11: return 30;
+                    case 12:
+                        return 31;
+                    default: return 0;
