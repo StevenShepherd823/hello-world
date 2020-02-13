@@ -1,0 +1,56 @@
+static void mergeSort(int[] arr)
+        {
+            int[] tmp = new int[arr.Length];
+            mergeSortHelper(arr, 0, arr.Length - 1, tmp);
+        }
+        static void mergeSortHelper(int[] arr, int firstIdx, int lastIdx, int[] tmp)
+        {
+            
+            if (firstIdx < lastIdx)// only divide if I have at least two elements
+            {
+                // divide and conquer
+                int midIdx = (firstIdx + lastIdx) / 2;
+
+                mergeSortHelper(arr, firstIdx, midIdx, tmp);// recurselvly sort the 1st half 
+                mergeSortHelper(arr, midIdx + 1, lastIdx, tmp);// recurselvly sort the last half
+                merge(arr, firstIdx, midIdx, lastIdx, tmp);
+            }
+        }
+        static void merge(int[] arr, int firstIdx, int midIdx, int lastIdx, int[] tmp)
+        {
+            int i = firstIdx;
+            int j = midIdx + 1;
+            int k = firstIdx;
+
+            while(i<= midIdx && j <= lastIdx)
+            {
+                if (arr[i] < arr[j])
+                {
+                    tmp[k] = arr[i];
+                    k++;
+                    i++;
+                }
+                else
+                {
+                    tmp[k] = arr[j];
+                    k++;
+                    j++;
+                }
+            }
+            // copy leftover
+            while (i <= midIdx)
+            {
+               
+                    tmp[k] = arr[i];
+                    k++;
+                    i++;
+            }
+            while (j <= midIdx)
+            {
+
+                tmp[k] = arr[j];
+                k++;
+                j++;
+            }
+            for ( k = firstIdx; k <= lastIdx; k++)
+                arr[k] = tmp[k];
