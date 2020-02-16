@@ -1,0 +1,18 @@
+static void Main(string[] args)
+    {     
+      string[] MusicList;
+      
+      summerStrut = new string[] { "Juice", "Missing U", "Raspberry Beret", "New York Groove", "Make Me Feel", "Rebel Rebel", "Despacito", "Los Angeles" };
+      
+      int[] ratings = { 5, 4, 4, 3, 3, 5, 5, 4 };
+      
+      string [] MusicListCopy = new string [8];
+      Array.Copy(MusicList, MusicListCopy,8);
+    Console.WriteLine(MusicListCopy[0]);
+      
+      Array.Reverse(MusicList);
+      Console.WriteLine(MusicList[0], MusicList[8]);
+      Array.Clear(ratings,0,0);
+      Console.WriteLine(ratings[0]);
+    }
+  }
