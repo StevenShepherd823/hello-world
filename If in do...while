@@ -1,0 +1,16 @@
+ static void Main(string[] args)
+    {
+      bool buttonClick = true;
+      int times = 0; 
+      do
+      {
+        Console.WriteLine("BLARRRRR");
+        times++;
+        if (;time == 3;)
+        {
+          break;
+        }
+
+        
+      } while(!buttonClick);
+    }
