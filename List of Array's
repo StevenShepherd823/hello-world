@@ -1,0 +1,60 @@
+class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vals = {1, 6, 7 ,8 };
+            int[] another = new int[10];
+            Console.WriteLine(another[2]); //diplays the 3rd value
+
+            string[] strArr = new string[7];
+            Console.WriteLine(strArr[2]);
+
+            int[] ids = { 2, 3, 8, 9, -2, 10 };
+            //ids.Append(34); does not work
+            ArrayList myList = new ArrayList();
+            Console.WriteLine("count = {0}, capacity = {1}", myList.Count, myList.Capacity);
+
+            myList.Add(2);
+            Console.WriteLine("count = {0}, capacity = {1}", myList.Count, myList.Capacity);
+
+            myList.Add(22);
+            Console.WriteLine("count = {0}, capacity = {1}", myList.Count, myList.Capacity);
+
+            myList.Add(24);
+            Console.WriteLine("count = {0}, capacity = {1}", myList.Count, myList.Capacity);
+
+            myList.Add(-1);
+            Console.WriteLine("count = {0}, capacity = {1}", myList.Count, myList.Capacity);
+
+            myList.Add(42);
+            Console.WriteLine("count = {0}, capacity = {1}", myList.Count, myList.Capacity);
+            
+            MyOwnArrayList myOwnList1 = new MyOwnArrayList();
+            MyOwnArrayList myOwnList2 = new MyOwnArrayList();
+            MyOwnArrayList myOwnList3 = new MyOwnArrayList();
+            MyOwnArrayList myOwnList4 = new MyOwnArrayList();
+           
+            
+        }
+        
+        }
+    }
+}
+class MyOwnArrayList
+{
+    // data
+    private int[] values;
+    public int Count  { get;  }
+    public int Capacity { get; set; }
+    //methods
+    public void Add(int someValue)
+    {
+
+    }
+    // constructor
+    public MyOwnArrayList()
+    {
+
+    }
+
+}
