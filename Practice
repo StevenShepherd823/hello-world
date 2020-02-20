@@ -1,0 +1,26 @@
+   class Program
+    {
+        static void Main(string[] args)
+        {
+            class2 object1 = new class2();
+            object1.Play("Movie1");
+            class2 object2 = new class2();
+            object2.Play("Movie2");
+            class2 object3 = new class2();
+            object3.Play("Movie3");
+            object3.stop();
+        }
+        class class2
+        {
+            public void Play(string fileName)
+            {
+                Console.WriteLine("Class2.Method1");
+                Console.WriteLine(fileName);
+            }
+            public void stop()
+            {
+                Console.WriteLine("stop the movie");
+            }
+
+        }
+    }
