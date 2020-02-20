@@ -1,0 +1,27 @@
+class Program
+    {
+        static void Main(string[] args)
+        {
+            scream object1 = new scream();
+            object1.Yell("Change");
+            scream object2 = new scream();
+            object2.Yell("Your");
+            scream object3 = new scream();
+            object3.Yell("Shorts");
+            object3.enough();
+        }
+        class scream
+        {
+            public void Yell(string fileName)
+            {
+                fileName = fileName.ToUpper();
+                Console.WriteLine(fileName + "!");
+               
+            }
+            public void enough()
+            {
+                Console.WriteLine("stop yelling");
+            }
+
+        }
+    }
