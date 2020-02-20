@@ -1,0 +1,27 @@
+static void Main(string[] args)
+        {
+            int[] CountPosSumNeg = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15 };
+            AllNum(CountPosSumNeg);
+        }
+        public void AllNum(int[] arr)
+        {
+            for (int i = 0; i < i + 1; i++)
+            {
+                for (int k = 0; k < arr.Length ; i++)
+                {
+                    if (i > 0 && k > 0)
+                    {
+                        int x = i + k;
+                        Console.WriteLine(x);
+                    }
+                    if (i < 0 && k < 0)
+                    {
+                        int y = i + k;
+                        Console.WriteLine(y);
+                    }
+                }
+                
+            }
+            
+        }
+    }
