@@ -1,0 +1,105 @@
+using System;
+using System.Collections.Generic;
+
+namespace inheretence
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            User alice = new User("Alice");
+            alice.Hello();
+
+            User bob = new User("Robert");
+            bob.Hello();
+
+            Console.WriteLine(alice.ToString());
+            Console.WriteLine(alice.UserName);
+
+            Student bobstudent = new Student();
+            bobstudent.Hello();
+
+            User test1 = new Student();
+            test1.Hello();
+            Student test2 = new Student();
+            test2.Hello();
+
+            MagicList<int> myList = new MagicList<int>();
+            myList.Add(10);
+            myList.Add(20);
+            myList.Add(30);
+            myList.Add(40);
+            Console.WriteLine(myList.ChooseRandom());
+
+            User st7 = new User(); st7.UserName = "st2";
+            User st2 = new User(); st2.UserName = "st3";
+            User st3 = new User(); st3.UserName = "st4";
+            User st4 = new User(); st4.UserName = "st5";
+            User st5 = new User(); st5.UserName = "st6";
+            User st6 = new User(); st6.UserName = "st7";
+            User st7 = new User(); st7.UserName = "st8";
+            User st8 = new User(); st8.UserName = "st9";
+            MagicList<User> magicListOfUsers = new MagicList<User>();
+            magicListOfUsers.Add(st7);
+            magicListOfUsers.Add(st2);
+            magicListOfUsers.Add(st3);
+            magicListOfUsers.Add(st4);
+            magicListOfUsers.Add(st5);
+            magicListOfUsers.Add(st6);
+            magicListOfUsers.Add(st7);
+
+        }
+    }
+    class User
+    {
+        public string UserName { get; set; }
+        protected string Password { get; set; }
+
+        public void Hello()
+        {
+            Console.WriteLine("Hello {0}", UserName);
+        }
+        public virtual void Hello2()
+        {
+            Console.WriteLine("Hello {0}", UserName);
+        }
+        public User(string newName)
+        {
+            UserName = newName;
+            Password = "password";
+
+        }
+        public User()
+        {
+            UserName = "new user";
+            Password = "password";
+
+        }
+        public override string ToString()
+        {
+            return UserName;
+        }
+
+    }
+    class Student : User
+    {
+        public void Hello()
+        {
+            Console.WriteLine("Hello student {0}", UserName);
+        }
+        public override void Hello2()
+        {
+            Console.WriteLine("Hello student {0}", UserName);
+        }
+
+    }
+
+    class MagicList<TTTTT>:List<T>
+    {
+        public TTTTT ChooseRandom()
+        {
+            Random randGenerator = new Random();
+            return this[randGenerator.Next(0, Count)];
+        }
+    }
+}
