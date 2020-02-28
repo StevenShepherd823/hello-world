@@ -1,0 +1,18 @@
+class Program
+    {
+        static void Main(string[] args)
+        {
+            countPrimes(10);
+        }
+        public int countPrimes(int n)
+        {
+            bool[] iscomp = new bool[10];
+            for (int i = 2; i * i < n; i++)
+            {
+                for (int j = 2; i * j < n; j++)
+                {
+                    iscomp[i * j] = true;
+                }
+            }return iscomp;
+        }
+    }
