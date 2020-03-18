@@ -1,0 +1,17 @@
+    static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+        static string Duplicates(string dup)
+        {
+            string temp = string.Empty;
+            foreach (char c in dup)
+            {
+                if (!temp.Contains(c))
+                {
+                    temp += c;
+                }
+            }
+            return temp;
+        }
+    }
