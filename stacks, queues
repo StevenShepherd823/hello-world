@@ -1,0 +1,148 @@
+namespace training
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            LinkedList<int> mylist = new LinkedList<int>():
+            mylist.AddFirst(1);
+            mylist.AddFirst(2);
+            mylist.AddFirst(3);
+
+            Console.WriteLine(mylist);
+
+            Stack<string> mystack = new Stack<string>();
+            mystack.Push("Saint");
+            mystack.Push("martin");
+            mystack.Push("2020");
+
+  
+
+            Console.WriteLine(mystack);
+
+
+            // application for queues reverse contents of a file
+
+            StreamReader inFile = new StreamReader("input.txt");
+            Stack<string> mystack2 = new Stack<string>();
+            // read every line from file;
+            string line = inFile.ReadLine();
+            while(line!=null)
+            {
+                mystack2.Push(line);
+                line = inFile.ReadLine();
+            }
+            Console.WriteLine(mystack2);
+            inFile.Close();
+
+            StreamWriter outfile = new StreamWriter("output.txt");
+            while (mystack2.Peek()!= null)
+            {
+                outfile.WriteLine(mystack2.Pop());
+            }
+            outfile.Close();
+
+
+            Queue myQueue = new Queue();
+            myQueue.Enqueue(10);
+            myQueue.Enqueue(20);
+            myQueue.Enqueue(30);
+            myQueue.Enqueue(40);
+
+            Console.WriteLine(myQueue.Dequeue());
+            Console.WriteLine(myQueue.Dequeue());
+            Console.WriteLine(myQueue.Dequeue());
+            Console.WriteLine(myQueue.Dequeue());
+
+            Stack<int> myStack4 = new Stack<int>;
+
+
+        }
+        class LinkedList2 : LinkedList<T>
+        {
+            public override string ToString()
+            {
+                string ret = string.Empty;
+                /*foreach(var value in this)
+                {
+                    ret += value + " ";
+                }*/
+                ret = string.Join(",", this);
+                return ret;
+            }
+            
+        }
+        class Stack<T>
+        {
+            LinkedList<T> allValue;
+
+            public void Push(T newValue)
+            {
+                allValue.AddFirst(newValue);
+
+            }
+            public Stack()
+            {
+                allValue = new LinkedList<T>();
+            }
+               
+            
+            public T Pop()
+            {
+                if (allValue.Count>0)
+                {
+
+
+                    T first = Peek();
+                    allValue.RemoveFirst();
+                    return first;
+                }
+                else
+                {
+                    throw new Exception("the stack is empty....cnat pop");
+                }
+
+            }
+            public T Peek()
+            {
+                if (allValue.Count > 0)
+                {
+                    return allValue.First();
+                }
+
+                else
+                {
+                    return null;
+                } 
+
+            }
+
+        }
+       
+        class Queue
+        {
+            LinkedList<int> allValues;
+            public void Enqueue(int value)
+            {
+                allValues.AddFirst(value);
+            }
+            public int Dequeue()
+            {
+                int lastValue = peek();
+                allValues.RemoveLast();
+                return lastValue;
+            }
+            public int peek()
+            {
+                return allValues.Last();
+            }
+
+
+            public Queue()
+            {
+                allValues = new LinkedList<int>();
+            }
+        }
+
+    }
+}
