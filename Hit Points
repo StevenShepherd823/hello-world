@@ -1,0 +1,24 @@
+ int hero = 10;
+            int monster = 10;
+
+            Random dice = new Random();
+            
+            do
+            {
+                int hit = dice.Next(1, 6);
+
+                monster -= hit;
+                Console.WriteLine($"Monster was hit with {hit} and is now at {monster} health");
+
+                if (monster <= 0) continue;
+
+                hit = dice.Next(1, 6);
+                hero -= hit;
+                Console.WriteLine($"Hero was hit with {hit} and is now a {hero} health");
+
+
+
+            } while (hero > 0 && monster > 0);
+
+            Console.WriteLine(hero > monster ? "Hero wins!" : "Monster wins!");
+        }
