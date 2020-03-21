@@ -1,0 +1,29 @@
+string first = "Admin";
+            int last = 55;
+
+            if (first.Contains("Admin"))
+            {
+                if (last >= 55)
+                {
+                    Console.WriteLine("Welcome Super User");
+                }
+                else
+                {
+                    Console.WriteLine("Welcome Admin");
+                }
+            }
+            else if (first.Contains("Manager"))
+            {
+                if (last >= 20)
+                {
+                    Console.WriteLine("Contact Admin for Permission");
+                }
+                else
+                {
+                    Console.WriteLine("You do not have Permissions");
+                }
+            }
+            else
+            {
+                Console.WriteLine("You do not have Permissions");
+            }
